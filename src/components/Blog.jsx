@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 
-export default function Profile() {
+export default function Blog() {
   return (
     <div>
-      <p>ini halaman profil</p>
+      <p>halamna blog</p>
     </div>
   )
 }

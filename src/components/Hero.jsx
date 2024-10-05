@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
+import Card from './Card'
+import Footer from './Footer';
 
 const images = [
   "src/assets/slide1.jpeg",
@@ -63,6 +65,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <Card />
+      <Footer />
     </>
   );
 }
