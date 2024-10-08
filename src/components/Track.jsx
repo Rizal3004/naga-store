@@ -131,7 +131,7 @@ export default function Track() {
                   <img
                     alt={order.name}
                     className="w-12 h-12 rounded-md mr-4"
-                    src="/img/icon.png'"
+                    src="/img/icon.png"
                   />
                   <div>
                     <h2 className="text-base font-semibold">{order.name}</h2>

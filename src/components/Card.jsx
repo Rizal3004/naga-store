@@ -7,12 +7,12 @@ export default function Card() {
 
   // Data dummy
   const dummyData = [
-    { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Tersedia' },
-    { name: '60 UC', price: 'Rp 13.495,-', discount: '1%', paymentMethod: 'E-Wallet', status: 'Tersedia' },
-    { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Habis' },
-    { name: '1200 UC', price: 'Rp 199.000,-', discount: '1%', paymentMethod: 'E-Wallet', status: 'Tersedia' },
-    { name: '300 UC', price: 'Rp 45.000,-', discount: '1%', paymentMethod: 'Kartu Kredit', status: 'Tersedia' },
-    { name: '5000 UC', price: 'Rp 600.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Habis' },
+    { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%',status: 'Tersedia' },
+    { name: '60 UC', price: 'Rp 13.495,-', discount: '1%',status: 'Tersedia' },
+    { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', status: 'Habis' },
+    { name: '1200 UC', price: 'Rp 199.000,-', discount: '1%', status: 'Tersedia' },
+    { name: '300 UC', price: 'Rp 45.000,-', discount: '1%', status: 'Tersedia' },
+    { name: '5000 UC', price: 'Rp 600.000,-', discount: '1%', status: 'Habis' },
   ];
 
   // Fungsi untuk memilih item
@@ -52,7 +52,6 @@ export default function Card() {
                   <p className="text-lg font-bold">{item.name}</p>
                   <p className="line-through">{item.price}</p>
                   <p>{item.price}</p>
-                  <p className="text-sm text-gray-300">Metode: {item.paymentMethod}</p>
                   <p className={`text-sm ${item.status === 'Habis' ? 'text-red-500' : 'text-green-500'}`}>
                     Status: {item.status}
                   </p>
