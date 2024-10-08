@@ -184,7 +184,7 @@ export default function Track() {
               alt="Nothing here"
               className="mx-auto mb-4 animate-bounce"
               height={100}
-              src="src/assets/uc.png"
+              src="/img/uc.png"
               width={150}
             />
             <p className="text-white text-center text-sm md:text-base lg:text-lg px-4">
