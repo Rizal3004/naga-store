@@ -59,7 +59,7 @@ export default function Footer({ selectedItem }) {
         </div>
       </div>
 
-      <button className="bg-sky-500 text-white px-2 py-2 rounded-md" onClick={handleConfirmClick}>
+      <button className="bg-sky-500 text-white px-2 py-2 rounded-md hover:bg-blue-700" onClick={handleConfirmClick}>
         Konfirmasi Pesanan
       </button>
 

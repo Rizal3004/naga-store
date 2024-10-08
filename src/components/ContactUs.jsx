@@ -62,7 +62,7 @@ export default function ContactUs() {
         </div>
         <div className="border-t border-gray-500 w-full mt-4"></div>
         <p className="text-center mt-4 text-gray-400">
-          © 2024 Rdiann Arfan-Naga Store | Rizal Ihsan
+          © 2024 Radian Arfan-Naga Store | Rizal Ihsan
         </p>
       </div>
     </>

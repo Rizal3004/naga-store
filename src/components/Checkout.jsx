@@ -93,7 +93,7 @@ export default function Checkout() {
         <div className="mt-4 text-center">
           <p className="text-white">
             Butuh bantuan?{' '}
-            <a className="text-sky-500 font-semibold" href="https://wa.me/+6281362812549">
+            <a className="text-sky-500 font-semibold hover:text-blue-700" href="https://wa.me/+6281362812549">
               Hubungi kami
             </a>
           </p>
