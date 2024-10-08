@@ -1,17 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import IcOutlineAccountCircle from '~icons/ic/outline-account-circle';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+// import IcOutlineAccountCircle from '~icons/ic/outline-account-circle';
 
 export default function Header() {
+  const navigate = useNavigate();
   const [isOpenDesktop, setIsOpenDesktop] = useState(false);
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [voucherCode, setVoucherCode] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
 
-  const toggleDesktopDropdown = () => {
-    setIsOpenDesktop((prev) => !prev);
-  };
+  // const toggleDesktopDropdown = () => {
+  //   setIsOpenDesktop((prev) => !prev);
+  // };
 
   const toggleMobileDropdown = () => {
     setIsOpenMobile((prev) => !prev);
@@ -23,7 +25,7 @@ export default function Header() {
 
   const handleMenuClick = (menu, path) => {
     setActiveMenu(menu);
-    window.location.href = path;
+    navigate(path); // Gunakan navigate untuk berpindah halaman
   };
 
   useEffect(() => {
@@ -50,10 +52,10 @@ export default function Header() {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <img className="h-[65px]" src="src/assets/logo.png" alt="logo" />
+                  <img className="h-[65px] animate-fade-left" src="src/assets/logo.png" alt="logo" />
                 </div>
                 <div className="hidden md:block">
-                  <div className="ml-10 flex items-baseline space-x-4">
+                  <div className="ml-10 flex items-baseline space-x-4 transition hover:scale-105 duration-300 ease-in-out">
                     {[
                       { name: 'Home', path: '/' },
                       { name: 'Blog', path: '/blog' },
@@ -62,7 +64,7 @@ export default function Header() {
                       <button
                         key={menu.name}
                         className={`rounded-md px-3 py-2 text-sm font-medium text-white ${
-                          activeMenu === menu.name ? 'bg-gray-900' : 'text-gray-300 hover:bg-gray-700'
+                          activeMenu === menu.name ? 'text-red-600' : 'text-white hover:text-red-600'
                         }`}
                         onClick={() => handleMenuClick(menu.name, menu.path)}
                       >
@@ -73,27 +75,27 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="hidden md:flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-4 animate-fade-down">
                 <div>
                   <input
                     type="text"
-                    className="w-full md:w-90 h-6 p-2 text-sm rounded-full bg-gray-600 text-white"
+                    className="w-full md:w-90 h-6 p-2 text-sm rounded-full bg-gray-600 text-white transition hover:scale-105 duration-300 ease-in-out"
                     placeholder="Ketikan Kode Voucher..."
                     value={voucherCode}
                     onChange={(e) => setVoucherCode(e.target.value)}
                   />
                 </div>
-                <div className="relative ml-3">
+                {/* <div className="relative ml-3">
                   <button
                     type="button"
                     onClick={toggleDesktopDropdown}
-                    className="relative flex max-w-xs items-center rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-slate-300 focus:ring-offset-1"
+                    className="relative flex max-w-xs items-center rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-slate-300 focus:ring-offset-1 animate-fade-down"
                     id="user-menu-button"
                     aria-expanded={isOpenDesktop}
                     aria-haspopup="true"
                   >
                     <span className="sr-only">Open user menu</span>
-                    <IcOutlineAccountCircle className="h-8 w-8 text-slate-400" />
+                    <IcOutlineAccountCircle className="h-8 w-8 text-slate-400 transition hover:scale-110 duration-300 ease-in-out" />
                   </button>
 
                   {isOpenDesktop && (
@@ -104,17 +106,17 @@ export default function Header() {
                       aria-labelledby="user-menu-button"
                       tabIndex={-1}
                     >
-                      <button
-                        onClick={() => handleMenuClick('Your Profile', '/profile')}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                        tabIndex={-1}
+                    <button
+                      onClick={() => handleMenuClick('Your Profile', '/profile')}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
+                      role="menuitem"
+                      tabIndex={-1}
                       >
-                        Your Profile
-                      </button>
+                      Your Profile
+                  </button>
                       <a
                         href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
                         role="menuitem"
                         tabIndex={-1}
                       >
@@ -122,10 +124,10 @@ export default function Header() {
                       </a>
                     </div>
                   )}
-                </div>
+                </div> */}
               </div>
 
-              <div className="flex md:hidden items-center space-x-4">
+              <div className="flex md:hidden items-center space-x-4 animate-fade-down">
                 <button
                   type="button"
                   onClick={toggleMobileDropdown}
@@ -134,8 +136,8 @@ export default function Header() {
                   aria-expanded={isOpenMobile}
                   aria-haspopup="true"
                 >
-                  <span className="sr-only">Open user menu</span>
-                  <IcOutlineAccountCircle className="h-8 w-8 text-slate-400" />
+                  {/* <span className="sr-only">Open user menu</span>
+                  <IcOutlineAccountCircle className="h-8 w-8 text-slate-400 transition hover:scale-110 duration-300 ease-in-out" /> */}
                 </button>
 
                 <button
@@ -171,7 +173,7 @@ export default function Header() {
             </div>
           </div>
 
-          {isOpenMobile && (
+          {/* {isOpenMobile && (
             <div
               className="md:hidden block bg-white absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-10"
               role="menu"
@@ -180,20 +182,20 @@ export default function Header() {
             >
               <button
                 onClick={() => handleMenuClick('Your Profile', '/profile')}
-                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
                 role="menuitem"
               >
                 Your Profile
               </button>
               <a
                 href="#"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
                 role="menuitem"
               >
                 Sign out
               </a>
             </div>
-          )}
+          )} */}
 
           <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`} id="mobile-menu">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
@@ -204,8 +206,8 @@ export default function Header() {
               ].map((menu) => (
                 <button
                   key={menu.name}
-                  className={`block rounded-md px-3 py-2 text-base font-medium text-slate-400 ${
-                    activeMenu === menu.name ? 'bg-gray-900' : 'text-gray-300 hover:bg-gray-700'
+                  className={`block rounded-md px-3 py-2 text-base font-medium text-white ${
+                    activeMenu === menu.name ? 'text-red-600' : 'text-white hover:text-red-600'
                   }`}
                   onClick={() => handleMenuClick(menu.name, menu.path)}
                 >

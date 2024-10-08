@@ -1,0 +1,104 @@
+/* Pembungkus untuk loader yang tidak mempengaruhi layout lain */
+.loader-wrapper {
+    position: fixed; /* Menempatkan loader di posisi tetap */
+    top: 0; /* Atur agar berada di bagian atas */
+    left: 0; /* Atur agar berada di sisi kiri */
+    width: 100%; /* Mengambil seluruh lebar */
+    height: 100%; /* Mengambil seluruh tinggi */
+    background: rgb(0, 38, 54); /* Background semi-transparan */
+    display: flex; /* Menggunakan flex untuk memusatkan loader */
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    z-index: 1000; /* Pastikan loader berada di atas elemen lainnya */
+  }
+  
+  .loader {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 90px;
+    height: 90px;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotate(45deg);
+  }
+  
+  .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    box-shadow: 112.5px 112.5px 20px #000;
+    animation: move 2s ease-in-out infinite both;
+    transform-style: preserve-3d;
+  }
+  
+  .box:nth-child(1) {
+    animation-delay: -1s;
+  }
+  
+  .box:nth-child(2) {
+    animation-delay: -2s;
+  }
+  
+  .box:nth-child(3) {
+    animation-delay: -3s;
+  }
+  
+  .box:before,
+  .box:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .box:before {
+    top: 100%;
+    left: 0;
+    background: #ff0000;
+    transform-origin: center top;
+    transform: rotateX(-90deg);
+  }
+  
+  .box:after {
+    top: 0;
+    left: 100%;
+    background: #6a0000;
+    transform-origin: center left;
+    transform: rotateY(90deg);
+  }
+  
+  @keyframes move {
+    0%, 100% {
+      transform: none;
+    }
+    12.5% {
+      transform: translate(30px, 0);
+    }
+    25% {
+      transform: translate(60px, 0);
+    }
+    37.5% {
+      transform: translate(60px, 30px);
+    }
+    50% {
+      transform: translate(60px, 60px);
+    }
+    62.5% {
+      transform: translate(30px, 60px);
+    }
+    75% {
+      transform: translate(0, 60px);
+    }
+    87.5% {
+      transform: translate(0, 30px);
+    }
+  }
+  
+  /* Sembunyikan loader ketika tidak digunakan */
+  .hidden {
+    display: none;
+  }
+  

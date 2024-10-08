@@ -29,10 +29,10 @@ export default function Hero() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         rel="stylesheet"
       />
-      <div className="max-w-4xl mx-auto p-4">
+      <div className="max-w-4xl mx-auto p-4 animate-fade-down">
         <div className="relative bg-gray-800 rounded-lg overflow-hidden">
           <img
-            alt="Background with various game icons"
+            alt="Background game"
             className="carousel-item rounded-lg w-full h-64 object-cover" // Menggunakan rounded-lg untuk sudut melengkung
             height={400}
             src={images[currentImageIndex]} // Gunakan gambar saat ini

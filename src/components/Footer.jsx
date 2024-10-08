@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 export default function Footer() {
   const [showPaymentPopup, setShowPaymentPopup] = useState(false); // State to control payment popup visibility
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(''); // Selected payment method
+  // eslint-disable-next-line no-unused-vars
   const ucAmount = 30; // Example UC amount
   const totalPrice = 'Rp 6.747,-'; // Example total price
 
@@ -23,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 w-full flex justify-center items-center bg-cyan-950 p-2 rounded-lg">
+    <div className="fixed bottom-0 left-0 w-full flex justify-center items-center bg-cyan-950 p-2 rounded-lg animate-fade-up">
       {/* Payment Info */}
       <div className="flex items-center mx-4">
         <img
@@ -43,7 +44,7 @@ export default function Footer() {
 
       {/* Payment Method Popup */}
       {showPaymentPopup && (
-        <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-center">
+        <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-center animate-fade-in">
           <div className="relative bg-cyan-950 p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
             <h2 className="text-xl font-bold mb-4 text-center">Pilih Metode Pembayaran</h2>
             <p className="text-center mb-4">Total Pembayaran: {totalPrice}</p>
