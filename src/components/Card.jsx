@@ -5,6 +5,16 @@ export default function Card() {
   // State untuk item yang dipilih
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Data dummy
+  const dummyData = [
+    { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Tersedia' },
+    { name: '60 UC', price: 'Rp 13.495,-', discount: '1%', paymentMethod: 'E-Wallet', status: 'Tersedia' },
+    { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Habis' },
+    { name: '1200 UC', price: 'Rp 199.000,-', discount: '1%', paymentMethod: 'E-Wallet', status: 'Tersedia' },
+    { name: '300 UC', price: 'Rp 45.000,-', discount: '1%', paymentMethod: 'Kartu Kredit', status: 'Tersedia' },
+    { name: '5000 UC', price: 'Rp 600.000,-', discount: '1%', paymentMethod: 'Transfer Bank', status: 'Habis' },
+  ];
+
   // Fungsi untuk memilih item
   const handleSelectItem = (item) => {
     // Toggle item selection; if the selected item is clicked again, deselect it
@@ -26,125 +36,41 @@ export default function Card() {
 
         {/* Grid container */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 animate-fade-right">
-          {/* Item 1 */}
-          <div
-            className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
-              selectedItem && selectedItem.name === '15000 UC' ? 'border-4 border-blue-500' : ''
-            }`}
-            onClick={() => handleSelectItem({ name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%' })}
-          >
-            <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
-              1% OFF
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-lg font-bold">15000 UC</p>
-                <p className="line-through">Rp 1.200.000,-</p>
-                <p>Rp 1.150.000,-</p>
+          {dummyData.map((item) => (
+            <div
+              key={item.name}
+              className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
+                selectedItem && selectedItem.name === item.name ? 'border-4 border-blue-500' : ''
+              }`}
+              onClick={() => handleSelectItem(item)}
+            >
+              <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
+                {item.discount} OFF
               </div>
-              <img
-                alt="UC icon"
-                height={50}
-                src="src/assets/uc.png"
-                width={50}
-              />
-            </div>
-            {selectedItem && selectedItem.name === '15000 UC' && (
-              <div className="absolute top-2 right-2 text-green-500 text-2xl animate-bounce">
-                <i className="fas fa-check-circle"></i>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-lg font-bold">{item.name}</p>
+                  <p className="line-through">{item.price}</p>
+                  <p>{item.price}</p>
+                  <p className="text-sm text-gray-300">Metode: {item.paymentMethod}</p>
+                  <p className={`text-sm ${item.status === 'Habis' ? 'text-red-500' : 'text-green-500'}`}>
+                    Status: {item.status}
+                  </p>
+                </div>
+                <img
+                  alt="UC icon"
+                  height={50}
+                  src="public/img/uc.png"
+                  width={50}
+                />
               </div>
-            )}
-          </div>
-
-          {/* Item 2 */}
-          <div
-            className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
-              selectedItem && selectedItem.name === '60 UC' ? 'border-4 border-blue-500' : ''
-            }`}
-            onClick={() => handleSelectItem({ name: '60 UC', price: 'Rp 13.495,-', discount: '1%' })}
-          >
-            <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
-              1% OFF
+              {selectedItem && selectedItem.name === item.name && (
+                <div className="absolute top-2 right-2 text-green-500 text-2xl animate-bounce">
+                  <i className="fas fa-check-circle"></i>
+                </div>
+              )}
             </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-lg font-bold">60 UC</p>
-                <p className="line-through">Rp 13.631,-</p>
-                <p>Rp 13.495,-</p>
-              </div>
-              <img
-                alt="UC icon"
-                height={50}
-                src="src/assets/uc.png"
-                width={50}
-              />
-            </div>
-            {selectedItem && selectedItem.name === '60 UC' && (
-              <div className="absolute top-2 right-2 text-green-500 text-2xl animate-bounce">
-                <i className="fas fa-check-circle"></i>
-              </div>
-            )}
-          </div>
-
-          {/* Item 3 */}
-          <div
-            className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
-              selectedItem && selectedItem.name === '750 UC' ? 'border-4 border-blue-500' : ''
-            }`}
-            onClick={() => handleSelectItem({ name: '750 UC', price: 'Rp 90.000,-', discount: '1%' })}
-          >
-            <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
-              1% OFF
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-lg font-bold">750 UC</p>
-                <p className="line-through">Rp 95.000,-</p>
-                <p>Rp 90.000,-</p>
-              </div>
-              <img
-                alt="UC icon"
-                height={50}
-                src="src/assets/uc.png"
-                width={50}
-              />
-            </div>
-            {selectedItem && selectedItem.name === '750 UC' && (
-              <div className="absolute top-2 right-2 text-green-500 text-2xl animate-bounce">
-                <i className="fas fa-check-circle"></i>
-              </div>
-            )}
-          </div>
-
-          {/* Item 4 */}
-          <div
-            className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
-              selectedItem && selectedItem.name === '1200 UC' ? 'border-4 border-blue-500' : ''
-            }`}
-            onClick={() => handleSelectItem({ name: '1200 UC', price: 'Rp 199.000,-', discount: '1%' })}
-          >
-            <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-tr-lg rounded-bl-lg">
-              1% OFF
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="text-lg font-bold">1200 UC</p>
-                <p className="line-through">Rp 200.631,-</p>
-                <p>Rp 199.000,-</p>
-              </div>
-              <img
-                alt="UC icon"
-                height={50}
-                src="src/assets/uc.png"
-                width={50}
-              />
-            </div>
-            {selectedItem && selectedItem.name === '1200 UC' && (
-              <div className="absolute top-2 right-2 text-green-500 text-2xl animate-bounce">
-                <i className="fas fa-check-circle"></i>
-              </div>
-            )}
-          </div>
+          ))}
         </div>
       </div>
     </>

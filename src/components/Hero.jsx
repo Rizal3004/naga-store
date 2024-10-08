@@ -4,12 +4,12 @@ import Card from './Card'
 import Footer from './Footer';
 
 const images = [
-  "src/assets/slide1.jpeg",
-  "src/assets/slide2.jpg",
-  "src/assets/slide3.jpg",
-  "src/assets/slide4.jpg",
-  "src/assets/slide5.jpg", 
-  "src/assets/slide6.jpg"
+  "public/img/slide1.jpeg",
+  "public/img/slide2.jpg",
+  "public/img/slide3.jpg",
+  "public/img/slide4.jpg",
+  "public/img/slide5.jpg", 
+  "public/img/slide6.jpg"
 ];
 
 export default function Hero() {
@@ -43,7 +43,7 @@ export default function Hero() {
               alt="PUBG Mobile (Indonesia) icon"
               className="w-16 h-16 rounded-lg mr-4"
               height={64}
-              src="https://storage.googleapis.com/a1aa/image/oRCLRLe1pQW9VqDnfqUjeBKXfZRYPxgmeJHvBD02L4qqDaccC.jpg"
+              src="public/img/icon.png"
               width={64}
             />
             <div>

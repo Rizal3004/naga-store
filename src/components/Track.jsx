@@ -11,7 +11,7 @@ export default function Track() {
   const dummyData = [
     {
       id: 1,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '05 Oktober 2024, 07:32:52',
       price: 'Rp 6.882,-',
@@ -21,7 +21,7 @@ export default function Track() {
     },
     {
       id: 2,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '05 November 2023, 14:56:30',
       price: 'Rp 64.045,-',
@@ -31,7 +31,7 @@ export default function Track() {
     },
     {
       id: 3,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '28 Oktober 2023, 18:57:08',
       price: 'Rp 64.269,-',
@@ -41,7 +41,7 @@ export default function Track() {
     },
     {
       id: 4,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '12 Desember 2023, 10:15:30',
       price: 'Rp 89.123,-',
@@ -51,7 +51,7 @@ export default function Track() {
     },
     {
       id: 5,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '19 Januari 2024, 08:45:00',
       price: 'Rp 45.000,-',
@@ -61,7 +61,7 @@ export default function Track() {
     },
     {
       id: 6,
-      image: 'https://storage.googleapis.com/a1aa/image/D1heOf999eEBpp6JkNEGoa2ZNJeOFztsnemmcvEB7edszAJ5E.jpg',
+      image: 'public/img/icon.png',
       name: 'PUBG Mobile (Indonesia)',
       date: '02 Februari 2024, 16:20:45',
       price: 'Rp 120.000,-',
@@ -187,7 +187,7 @@ export default function Track() {
             <div className="text-center mt-6">
             <h1 className="text-white text-2xl mb-6">Riwayat Pesanan</h1>
             <img
-              alt="Illustration of a person with a question mark and a package"
+              alt="Nothing here"
               className="mx-auto mb-4 animate-bounce"
               height={100}
               src="src/assets/uc.png"

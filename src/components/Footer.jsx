@@ -28,9 +28,9 @@ export default function Footer() {
       {/* Payment Info */}
       <div className="flex items-center mx-4">
         <img
-          alt="Image of UC currency"
+          alt="UC Image"
           className="w-8 h-8 mr-4"
-          src="src/assets/uc.png"
+          src="public/img/uc.png"
         />
         <div>
           <div className="text-white">100000 UC</div>

@@ -14,7 +14,7 @@ export default function ContactUs() {
             alt="logo"
             className="mb-1 md:mb-0 hover:animate-wiggle-more"
             height={250}
-            src="src/assets/logo.png"
+            src="public/img/logo.png"
             width={250}
           />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
