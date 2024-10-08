@@ -22,6 +22,10 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(50px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeIn: {  // New fadeIn keyframe
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         wiggleMore: {
           '0%, 100%': { transform: 'rotate(-5deg)' },
           '50%': { transform: 'rotate(5deg)' },
@@ -32,6 +36,7 @@ export default {
         'fade-left': 'fadeLeft 1s ease-out',
         'fade-right': 'fadeRight 1s ease-out',
         'fade-up': 'fadeUp 1s ease-out',
+        'fade-in': 'fadeIn 1s ease-out',  // New fade-in animation
         'wiggle-more': 'wiggleMore 1s ease-in-out infinite',
       },
     },

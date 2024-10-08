@@ -1,21 +1,19 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import Footer from './Footer'; // Pastikan path ini benar
 
 export default function Card() {
-  // State untuk item yang dipilih
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Data dummy
   const dummyData = [
-    { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%',status: 'Tersedia' },
-    { name: '60 UC', price: 'Rp 13.495,-', discount: '1%',status: 'Tersedia' },
+    { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%', status: 'Tersedia' },
+    { name: '60 UC', price: 'Rp 13.495,-', discount: '1%', status: 'Tersedia' },
     { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', status: 'Habis' },
     { name: '1200 UC', price: 'Rp 199.000,-', discount: '1%', status: 'Tersedia' },
     { name: '300 UC', price: 'Rp 45.000,-', discount: '1%', status: 'Tersedia' },
     { name: '5000 UC', price: 'Rp 600.000,-', discount: '1%', status: 'Habis' },
   ];
 
-  // Fungsi untuk memilih item
   const handleSelectItem = (item) => {
     // Toggle item selection; if the selected item is clicked again, deselect it
     if (selectedItem && selectedItem.name === item.name) {
@@ -23,6 +21,7 @@ export default function Card() {
     } else {
       setSelectedItem(item);
     }
+    console.log('Selected Item:', item); // Debugging
   };
 
   return (
@@ -34,7 +33,6 @@ export default function Card() {
       <div className="max-w-7xl mx-auto p-4 bg-gray-600 bg-opacity-50 bg-cover bg-center md:bg-fixed animate-fade-left">
         <h1 className="text-xl font-bold mb-4 text-white text-center">PILIH ITEM</h1>
 
-        {/* Grid container */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 animate-fade-right">
           {dummyData.map((item) => (
             <div
@@ -72,6 +70,9 @@ export default function Card() {
           ))}
         </div>
       </div>
+
+      {/* Pass selectedItem to Footer */}
+      <Footer selectedItem={selectedItem} />
     </>
   );
 }

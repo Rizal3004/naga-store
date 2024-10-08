@@ -123,7 +123,7 @@ export default function Track() {
           </p>
         )}
         {showTable ? (
-          <div className="max-w-2xl mx-auto p-3">
+          <div className="max-w-2xl mx-auto p-3 animate-fade-up">
             <h1 className="text-2xl text-slate-950 text-center font-bold mb-4">Riwayat Pesanan</h1>
             {paginatedData.map((order) => (
               <div key={order.id} className="bg-cyan-950 p-4 rounded-lg mb-4">

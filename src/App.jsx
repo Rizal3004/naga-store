@@ -6,7 +6,8 @@ import Hero from './components/Hero';
 import ContactUs from './components/ContactUs';
 import Blog from './components/Blog';
 import Track from './components/Track';
-import Preloader from './components/Preloader'; // Impor Preloader
+import Preloader from './components/Preloader'; // Import Preloader
+import Checkout from './components/Checkout'; // Import the Checkout component
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -14,29 +15,30 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulasi delay untuk preloader
+    // Simulate delay for preloader
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Atur waktu sesuai kebutuhan Anda
+    }, 3000); // Adjust the time as needed
   }, []);
 
   return (
     <>
       {isLoading ? (
-        <Preloader /> // Tampilkan preloader saat aplikasi sedang dimuat
+        <Preloader /> // Display preloader while the app is loading
       ) : (
         <Router>
           <Header />
           <div
             className="bg-cover bg-center md:bg-fixed content-start min-h-screen"
             style={{
-              backgroundImage: "url('/img/background.jpg')", // Ganti dengan link gambar yang diinginkan
+              backgroundImage: "url('/img/background.jpg')", // Replace with the desired image link
             }}
           >
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/track" element={<Track />} />
+              <Route path="/checkout" element={<Checkout />} />
               {/* <Route path="/profile" element={<Profile />} /> */}
             </Routes>
 

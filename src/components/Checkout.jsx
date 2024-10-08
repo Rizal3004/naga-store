@@ -1,95 +1,104 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React from 'react';
 
 export default function Checkout() {
   return (
-    <div className="font-[sans-serif] bg-white">
-      <div className="flex max-sm:flex-col gap-12 max-lg:gap-4 h-full">
-        <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 sm:h-screen sm:sticky sm:top-0 lg:min-w-[370px] sm:min-w-[300px]">
-          <div className="relative h-full">
-            <div className="px-4 py-8 sm:overflow-auto sm:h-[calc(100vh-60px)]">
-              <div className="space-y-4">
-
-
-                <div className="flex items-start gap-4">
-                  <div className="w-32 h-28 max-lg:w-24 max-lg:h-24 flex p-3 shrink-0 bg-gray-300 rounded-md">
-                    <img src='ser/assets/uc.png' className="w-full object-contain" />
-                  </div>
-                  <div className="w-full">
-                    <h3 className="text-base text-white">60 UC</h3>
-                    <ul className="text-xs text-gray-300 space-y-2 mt-2">
-                      <li>Size <span className="float-right">37</span></li>
-                      <li>Quantity <span className="float-right">2</span></li>
-                      <li>Total Price <span className="float-right">$40</span></li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-
-            <div className="md:absolute md:left-0 md:bottom-0 bg-gray-800 w-full p-4">
-              <h4 className="flex flex-wrap gap-4 text-base text-white">Total <span className="ml-auto">$84.00</span></h4>
-            </div>
+    <>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet"
+      />
+      <div className="max-w-2xl mx-auto bg-cyan-950 shadow-md rounded-xl mt-6 my-6 p-10 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 border-b pb-2">
+          <div>
+            <p className="text-sm text-gray-500">Tanggal Pembelian</p>
+            <p className="text-clip font-semibold">08/10/2024, 14:07:25</p>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500">Nomor Pesanan</p>
+            <p className="text-clip font-semibold flex items-center">
+              PMIX1926AF43EF12D80F91BB9440E{' '}
+              <i className="fas fa-copy ml-2 text-gray-500" />
+            </p>
           </div>
         </div>
-
-        <div className="max-w-4xl w-full h-max rounded-md px-4 py-8 sticky top-0">
-          <h2 className="text-2xl font-bold text-gray-800">Complete your order</h2>
-          <form className="mt-8">
-            <div>
-              <h3 className="text-base text-gray-800 mb-4">Personal Details</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <input type="text" placeholder="First Name"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-
-                <div>
-                  <input type="text" placeholder="Last Name"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-
-                <div>
-                  <input type="email" placeholder="Email"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-
-                <div>
-                  <input type="number" placeholder="Phone No."
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-base text-gray-800 mb-4">Shipping Address</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <input type="text" placeholder="Address Line"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-                <div>
-                  <input type="text" placeholder="City"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-                <div>
-                  <input type="text" placeholder="State"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-                <div>
-                  <input type="text" placeholder="Zip Code"
-                    className="px-4 py-3 bg-gray-100 focus:bg-transparent text-gray-800 w-full text-sm rounded-md focus:outline-blue-600" />
-                </div>
-              </div>
-
-              <div className="flex gap-4 max-md:flex-col mt-8">
-                <button type="button" className="rounded-md px-6 py-3 w-full text-sm tracking-wide bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-800 max-md:order-1">Cancel</button>
-                <button type="button" className="rounded-md px-6 py-3 w-full text-sm tracking-wide bg-blue-600 hover:bg-blue-700 text-white">Complete Purchase</button>
-              </div>
-            </div>
-          </form>
+        <div className="flex items-center mt-4">
+          <img
+            alt="icon pubg"
+            className="w-20 h-20 rounded-lg"
+            src="/img/icon.png"
+          />
+          <div className="ml-4">
+            <p className="text-xl font-semibold text-white">PUBG Mobile (Indonesia)</p>
+            <p className="text-gray-500">KRAFTON</p>
+          </div>
+        </div>
+        <div className="border-t border-dashed mt-4 pt-4">
+          <p className="text-clip font-semibold">Detail</p>
+          <div className="flex justify-between mt-2">
+            <p className="text-gray-400">Item</p>
+            <p className="text-white">30 UC</p>
+          </div>
+          <div className="flex justify-between mt-2">
+            <p className="text-gray-400">User Id</p>
+            <p className="text-white">23098765</p>
+          </div>
+        </div>
+        <div className="border-t border-dashed mt-4 pt-4">
+          <div className="flex justify-between items-center">
+            <p className="text-clip font-semibold">Metode Pembayaran</p>
+            <p className="text-clip flex items-center">Dana</p>
+          </div>
+          <div className="flex justify-between items-center mt-2">
+            <p className="text-clip font-semibold">No Rekening</p>
+            <p className="text-clip flex items-center">089898989</p>
+          </div>
+          <div className="flex justify-between items-center mt-2">
+            <p className="text-clip font-semibold">Atas Nama</p>
+            <p className="text-clip flex items-center">Radian Arfan Sinaga</p>
+          </div>
+          <div className="flex justify-between items-center mt-4">
+            <p className="text-clip font-semibold">Total Pembayaran</p>
+            <p className="text-red-600 text-xl flex items-center">
+              Rp 6.882,- <i className="fas fa-copy ml-2 text-gray-500" />
+            </p>
+          </div>
+        </div>
+        <div className="bg-orange-100 text-orange-700 p-4 mt-4 rounded-lg text-center">
+          <p className="text-sm font-semibold">
+            PENTING! Pastikan nominal transfer{' '}
+            <span className="font-bold">TEPAT BERJUMLAH ANGKA DI ATAS</span> (hingga
+            3 angka terakhir). Mohon untuk tidak melebihi atau mengurangi nominal
+            transfernya.
+          </p>
+        </div>
+        {/* File Upload Section */}
+        <div className="mt-6">
+          <label className="text-gray-500">Upload Bukti Transfer</label>
+          <input
+            type="file"
+            className="w-full p-1 mt-1 rounded bg-gray-100 text-gray-400 hover:bg-slate-800"
+            accept="image/*"
+          />
+        </div>
+        {/* Submit Button */}
+        <div className="mt-6">
+          <button
+            type="button"
+            className="w-full text-white bg-sky-600 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Konfirmasi
+          </button>
+        </div>
+        <div className="mt-4 text-center">
+          <p className="text-white">
+            Butuh bantuan?{' '}
+            <a className="text-sky-500 font-semibold" href="https://wa.me/+6281362812549">
+              Hubungi kami
+            </a>
+          </p>
         </div>
       </div>
-    </div>
-    </div>
-  )
+    </>
+  );
 }

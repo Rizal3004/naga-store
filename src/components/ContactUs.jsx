@@ -22,15 +22,21 @@ export default function ContactUs() {
               <h2 className="font-bold mb-2 text-white">PETA SITUS</h2>
               <div className="border-b-2 border-blue-500 w-8 mb-4 mx-auto md:mx-0"></div>
               <ul>
-                <li className="mb-2 text-gray-400">Home</li>
-                <li className="mb-2 text-gray-400">Blog</li>
-                <li className="mb-2 text-gray-400">Lacak Pesanan</li>
+                <li className="mb-2 text-gray-400">
+                <a href="/" className="text-gray-400 hover:text-red-600">Home</a>
+                </li>
+                <li className="mb-2 text-gray-400">
+                <a href="/blog" className="text-gray-400 hover:text-red-600">Blog</a>
+                </li>
+                <li className="mb-2 text-gray-400">
+                <a href="/track" className="text-gray-400 hover:text-red-600">Lacak Pesanan</a>
+                </li>
               </ul>
             </div>
             <div>
               <h2 className="font-bold mb-2 text-white">KONTAK KAMI</h2>
               <div className="border-b-2 border-blue-500 w-8 mb-4 mx-auto md:mx-0"></div>
-              <a className="text-green-600 text-2xl" href="#">
+              <a className="text-green-600 text-2xl" href="https://wa.me/+6281362812549">
                   <i className="fab fa-whatsapp transition hover:scale-110 duration-300 ease-in-out"></i>
               </a>
             </div>
@@ -41,7 +47,7 @@ export default function ContactUs() {
                 <a className="text-blue-600 text-2xl transition hover:scale-110 duration-300 ease-in-out" href="#">
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a className="text-pink-500 text-2xl transition hover:scale-110 duration-300 ease-in-out" href="#">
+                <a className="text-pink-500 text-2xl transition hover:scale-110 duration-300 ease-in-out" href="https://www.instagram.com/fanliuwnaga?igsh=cGdmbG1kNTA4azVv">
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a className="text-slate-950 text-2xl hover:text-white transition hover:scale-110 duration-300 ease-in-out" href="#">
