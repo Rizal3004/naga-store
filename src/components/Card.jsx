@@ -60,7 +60,7 @@ export default function Card() {
                 <img
                   alt="UC icon"
                   height={50}
-                  src="public/img/uc.png"
+                  src="/img/uc.png"
                   width={50}
                 />
               </div>

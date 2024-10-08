@@ -30,7 +30,7 @@ export default function Footer() {
         <img
           alt="UC Image"
           className="w-8 h-8 mr-4"
-          src="public/img/uc.png"
+          src="/img/uc.png"
         />
         <div>
           <div className="text-white">100000 UC</div>

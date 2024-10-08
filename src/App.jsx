@@ -30,7 +30,7 @@ export default function App() {
           <div
             className="bg-cover bg-center md:bg-fixed content-start min-h-screen"
             style={{
-              backgroundImage: "url('public/img/background.jpg')", // Ganti dengan link gambar yang diinginkan
+              backgroundImage: "url('/img/background.jpg')", // Ganti dengan link gambar yang diinginkan
             }}
           >
             <Routes>
