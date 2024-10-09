@@ -1,17 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer({ selectedItem }) {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
   const [showPaymentPopup, setShowPaymentPopup] = useState(false);
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
 
   const ucAmount = selectedItem ? selectedItem.name : '0 UC';
   const totalPrice = selectedItem ? selectedItem.price : 'Rp 0,-';
 
-  // Log untuk melihat selectedItem
   useEffect(() => {
     console.log('Selected Item in Footer:', selectedItem);
   }, [selectedItem]);
@@ -28,21 +27,18 @@ export default function Footer({ selectedItem }) {
     setShowPaymentPopup(false);
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault(); 
 
-    const whatsappInput = e.target.elements.floating_nohp.value; // Get Whatsapp input value
-    const pubgIdInput = e.target.elements.floating_idpubg.value; // Get PUBG ID input value
+    const whatsappInput = e.target.elements.floating_nohp.value; 
+    const pubgIdInput = e.target.elements.floating_idpubg.value; 
 
-    // Check for empty fields
     if (!whatsappInput || !pubgIdInput || !selectedPaymentMethod) {
-      alert('Harap isi semua field sebelum melanjutkan.'); // Show alert if fields are empty
-      return; // Prevent form submission
+      alert('Harap isi semua field sebelum melanjutkan.');
+      return;
     }
 
-    // Proceed to navigate to Checkout page if all fields are filled
-    navigate('/checkout'); // Redirect to Checkout page
+    navigate('/checkout'); 
   };
 
   return (
@@ -67,11 +63,11 @@ export default function Footer({ selectedItem }) {
         <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-center animate-fade-up">
           <div className="relative bg-cyan-950 p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
             <h2 className="text-xl font-bold mb-4 text-center">Isi Data dan Metode Pembayaran</h2>
-            <div className="items-center mx-36 animate-bounce">
+            <div className="flex justify-center mx-auto animate-bounce">
               <img
-                alt="UC Image"
-                className="h-20"
-                src="/img/ucicon.png"
+              alt="UC Image"
+              className="w-32 h-auto"
+              src="/img/ucicon.png"
               />
             </div>
             <p className="text-center text-red-700 text-xl">0 UC</p>
