@@ -1,8 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import Footer from './Footer'; // Pastikan path ini benar
+import Hero_P from '../heros/Hero_P';
+import Footer_P from '../footers/Footer_P';
+import VoucherInput from '../VoucherInput';
 
-export default function Card() {
+export default function Card_P() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const dummyData = [
@@ -26,19 +28,21 @@ export default function Card() {
 
   return (
     <>
+    <Hero_P />
+    <VoucherInput />
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         rel="stylesheet"
       />
-      <div className="max-w-7xl mx-auto p-4 bg-gray-600 bg-opacity-50 bg-cover bg-center md:bg-fixed animate-fade-left">
-        <h1 className="text-xl font-bold mb-4 text-white text-center">PILIH ITEM</h1>
+      <div className="max-w-7xl my-4 mx-auto p-4 bg-gray-600 bg-opacity-40 bg-cover rounded-lg bg-center md:bg-fixed animate-fade-left">
+        <h1 className="text-xl font-bold mb-2 text-white text-center">PILIH ITEM</h1>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 animate-fade-right">
           {dummyData.map((item) => (
             <div
               key={item.name}
               className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
-                selectedItem && selectedItem.name === item.name ? 'border-4 border-blue-500' : ''
+                selectedItem && selectedItem.name === item.name ? 'border-4 border-sky-500' : ''
               }`}
               onClick={() => handleSelectItem(item)}
             >
@@ -72,7 +76,7 @@ export default function Card() {
       </div>
 
       {/* Pass selectedItem to Footer */}
-      <Footer selectedItem={selectedItem} />
+      <Footer_P selectedItem={selectedItem} />
     </>
   );
 }

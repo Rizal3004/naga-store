@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Blog() {
   const dummyData = [
@@ -41,6 +41,23 @@ export default function Blog() {
     },
   ];
 
+  const [visibleItems, setVisibleItems] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setVisibleItems((prevVisibleItems) => {
+        if (prevVisibleItems < dummyData.length) {
+          return prevVisibleItems + 1;
+        } else {
+          clearInterval(intervalId);
+          return prevVisibleItems;
+        }
+      });
+    }, 300); // Mengatur jeda waktu animasi item satu per satu
+
+    return () => clearInterval(intervalId);
+  }, [dummyData.length]);
+
   return (
     <>
       <link
@@ -49,10 +66,11 @@ export default function Blog() {
       />
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {dummyData.map((item, index) => (
+          {dummyData.slice(0, visibleItems).map((item, index) => (
             <div
               key={index}
-              className="flex items-center bg-cyan-950 p-4 rounded-lg shadow-2xl"
+              className="flex items-center bg-cyan-950 p-4 rounded-lg shadow-2xl animate-fade-right transition-opacity duration-500 ease-in-out opacity-0"
+              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
             >
               <img
                 alt={item.altText}

@@ -182,10 +182,10 @@ export default function Track() {
             <h1 className="text-white text-2xl mb-6">Riwayat Pesanan</h1>
             <img
               alt="Nothing here"
-              className="mx-auto mb-4 animate-bounce"
-              height={100}
-              src="/img/uc.png"
-              width={150}
+              className="mx-auto mb-4"
+              height={200}
+              src="/img/nothing.png"
+              width={200}
             />
             <p className="text-white text-center text-sm md:text-base lg:text-lg px-4">
               Produk belum bisa ditampilkan, silakan isi nomor HP terlebih dahulu

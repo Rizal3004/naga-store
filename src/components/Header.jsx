@@ -8,7 +8,6 @@ export default function Header() {
   const [isOpenDesktop, setIsOpenDesktop] = useState(false);
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [voucherCode, setVoucherCode] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
 
   // const toggleDesktopDropdown = () => {
@@ -76,15 +75,6 @@ export default function Header() {
               </div>
 
               <div className="hidden md:flex items-center space-x-4 animate-fade-down">
-                <div>
-                  <input
-                    type="text"
-                    className="w-full md:w-90 h-6 p-2 text-sm rounded-full bg-gray-600 text-white transition hover:scale-105 duration-300 ease-in-out"
-                    placeholder="Ketikan Kode Voucher..."
-                    value={voucherCode}
-                    onChange={(e) => setVoucherCode(e.target.value)}
-                  />
-                </div>
                 {/* <div className="relative ml-3">
                   <button
                     type="button"
@@ -214,16 +204,6 @@ export default function Header() {
                   {menu.name}
                 </button>
               ))}
-              <div>
-                <p className="text-white text-xs text-opacity-40">Masukkan Kode Voucher</p>
-                <input
-                  type="text"
-                  className="w-full md:w-90 h-6 p-2 text-sm rounded-md bg-gray-600 text-white"
-                  placeholder="Kode Voucher"
-                  value={voucherCode}
-                  onChange={(e) => setVoucherCode(e.target.value)}
-                />
-              </div>
             </div>
           </div>
         </nav>

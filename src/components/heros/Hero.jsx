@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import Card from './Card'
-import Footer from './Footer';
 
 const images = [
   "/img/slide1.jpeg",
@@ -39,34 +37,17 @@ export default function Hero() {
             width={1200}
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-50  backdrop-blur-sm p-4 flex items-center">
-            <img
-              alt="PUBG Mobile (Indonesia) icon"
-              className="w-16 h-16 rounded-lg mr-4"
-              height={64}
-              src="/img/icon.png"
-              width={64}
-            />
             <div>
-              <h2 className="text-white text-xl font-semibold">
-                PUBG Mobile (Indonesia)
-              </h2>
-              <p className="text-gray-400">KRAFTON</p>
               <div className="flex space-x-2 mt-2">
-                <span className="flex items-center text-gray-400 text-sm">
+                <span className="flex items-center text-gray-300 text-sm">
                   <i className="fas fa-headset mr-1"></i>
                   Customer Service 24/7
-                </span>
-                <span className="flex items-center ttext-gray-400 text-sm">
-                  <i className="fas fa-check-circle mr-1"></i>
-                  Official Distributor
                 </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Card />
-      <Footer />
     </>
   );
 }
