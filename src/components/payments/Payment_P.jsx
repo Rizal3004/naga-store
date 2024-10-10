@@ -20,8 +20,12 @@ export default function Footer({ selectedItem }) {
   };
 
   const handleConfirmClick = () => {
+    if (!selectedItem) {
+      alert('Harap pilih item terlebih dahulu sebelum melanjutkan.');
+      return;
+    }
     setShowPaymentPopup(true);
-  };
+  };  
 
   const closePopup = () => {
     setShowPaymentPopup(false);
@@ -30,10 +34,11 @@ export default function Footer({ selectedItem }) {
   const handleSubmit = (e) => {
     e.preventDefault(); 
 
-    const whatsappInput = e.target.elements.floating_nohp.value; 
+    const whatsappInput = e.target.elements.floating_nohp.value;
+    const pubgNickInput = e.target.elements.floating_nick.value;
     const pubgIdInput = e.target.elements.floating_idpubg.value; 
 
-    if (!whatsappInput || !pubgIdInput || !selectedPaymentMethod) {
+    if (!whatsappInput || !pubgIdInput || !pubgNickInput || !selectedPaymentMethod) {
       alert('Harap isi semua field sebelum melanjutkan.');
       return;
     }
@@ -55,7 +60,11 @@ export default function Footer({ selectedItem }) {
         </div>
       </div>
 
-      <button className="bg-sky-500 text-white px-2 py-2 rounded-md hover:bg-blue-700" onClick={handleConfirmClick}>
+      <button
+        className="bg-sky-500 text-white px-2 py-2 rounded-md hover:bg-blue-700"
+        onClick={handleConfirmClick}
+        disabled={!selectedItem} // Disable button if no item is selected
+      >
         Konfirmasi Pesanan
       </button>
 
@@ -65,12 +74,12 @@ export default function Footer({ selectedItem }) {
             <h2 className="text-xl font-bold mb-4 text-center">Isi Data dan Metode Pembayaran</h2>
             <div className="flex justify-center mx-auto animate-bounce">
               <img
-              alt="UC Image"
-              className="w-32 h-auto"
-              src="/img/ucicon.png"
+                alt="UC Image"
+                className="w-32 h-auto"
+                src="/img/ucicon.png"
               />
             </div>
-            <p className="text-center text-red-700 text-xl">0 UC</p>
+            <p className="text-center text-gray-400 text-xl font-bold">{ucAmount}</p>
             <p className="text-center">Total Pembayaran: {totalPrice}</p>
 
             {/* Form Start */}
@@ -102,25 +111,39 @@ export default function Footer({ selectedItem }) {
                 />
                 <label
                   htmlFor="floating_idpubg"
-                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   ID PUBG
                 </label>
               </div>
               <div className="relative z-0 w-full mb-5 group">
-                <div className="relative z-0 w-full mb-5 group">
-                  <select
-                    value={selectedPaymentMethod}
-                    onChange={handlePaymentMethodChange}
-                    className="block py-2.5 px-0 w-full text-sm bg-cyan-950 border-0 border-b-2 border-sky-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    required=""
-                  >
-                    <option value="" disabled hidden>Pilih Metode Pembayaran</option>
-                    <option value="bank_transfer">Transfer Bank</option>
-                    <option value="e_wallet_dana">Dana</option>
-                    <option value="e_wallet_gopay">GoPay</option>
-                  </select>
-                </div>
+                <input
+                  type="text"
+                  name="floating_nick"
+                  id="floating_nick"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required=""
+                />
+                <label
+                  htmlFor="floating_nick"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Nick PUBG
+                </label>
+              </div>
+              <div className="relative z-0 w-full mb-5 group">
+                <select
+                  value={selectedPaymentMethod}
+                  onChange={handlePaymentMethodChange}
+                  className="block py-2.5 px-0 w-full text-sm bg-cyan-950 border-0 border-b-2 border-sky-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  required=""
+                >
+                  <option value="" disabled hidden>Pilih Metode Pembayaran</option>
+                  <option value="bank_transfer">Transfer Bank</option>
+                  <option value="e_wallet_dana">Dana</option>
+                  <option value="e_wallet_gopay">GoPay</option>
+                </select>
               </div>
               <button type="submit" className="w-full text-white bg-sky-600 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                 Kirim

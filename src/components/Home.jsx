@@ -29,8 +29,8 @@ export default function Home() {
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
             <img
               alt="pubg logo"
-              className="w-full h-48 object-cover"
-              src="/img/profileicon.jpg"
+              className="object-cover h-48 w-full rounded-lg transition-all duration-300 hover:scale-110"
+              src="/img/pubg.jpg"
               onClick={() => handleCardClick('pubg')}
             />
             <div className="p-4">
@@ -38,7 +38,7 @@ export default function Home() {
               <p className="text-gray-400">KRAFTON</p>
             </div>
             <button
-              className="absolute bottom-4 right-4 bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="absolute bottom-4 right-4 bg-gray-500 hover:bg-sky-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
               onClick={() => handleCardClick('pubg')}
             >
               <i className="fas fa-search" />
@@ -48,8 +48,8 @@ export default function Home() {
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
             <img
               alt="ml logo"
-              className="w-full h-48 object-cover"
-              src="/img/mlicon.png"
+              className="object-cover h-48 w-full rounded-lg transition-all duration-300 hover:scale-110"
+              src="/img/mlicon.jpg"
               onClick={() => handleCardClick('mobilelegend')}
             />
             <div className="p-4">
@@ -57,7 +57,7 @@ export default function Home() {
               <p className="text-gray-400">MONTOON</p>
             </div>
             <button
-              className="absolute bottom-4 right-4 bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="absolute bottom-4 right-4 bg-gray-500 hover:bg-sky-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
               onClick={() => handleCardClick('mobilelegend')}
             >
               <i className="fas fa-search" />
@@ -67,8 +67,8 @@ export default function Home() {
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg relative">
             <img
               alt="ff logo"
-              className="w-full h-48 object-cover"
-              src="/img/fficon.jpg"
+              className="object-cover h-48 w-full rounded-lg transition-all duration-300 hover:scale-110"
+              src="/img/fficon.png"
               onClick={() => handleCardClick('freefire')}
             />
             <div className="p-4">
@@ -76,7 +76,7 @@ export default function Home() {
               <p className="text-gray-400">GARENA</p>
             </div>
             <button
-              className="absolute bottom-4 right-4 bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="absolute bottom-4 right-4 bg-gray-500 hover:bg-sky-500 text-white rounded-full w-10 h-10 flex items-center justify-center"
               onClick={() => handleCardClick('freefire')}
             >
               <i className="fas fa-search" />

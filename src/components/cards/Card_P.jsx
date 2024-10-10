@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import Hero_P from '../heros/Hero_P';
-import Footer_P from '../footers/Footer_P';
+import Payment_P from '../payments/Payment_P';
 import VoucherInput from '../VoucherInput';
 
 export default function Card_P() {
@@ -10,13 +10,18 @@ export default function Card_P() {
   const dummyData = [
     { name: '15000 UC', price: 'Rp 1.150.000,-', discount: '1%', status: 'Tersedia' },
     { name: '60 UC', price: 'Rp 13.495,-', discount: '1%', status: 'Tersedia' },
-    { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', status: 'Habis' },
+    { name: '750 UC', price: 'Rp 90.000,-', discount: '1%', status: 'Tersedia' },
     { name: '1200 UC', price: 'Rp 199.000,-', discount: '1%', status: 'Tersedia' },
     { name: '300 UC', price: 'Rp 45.000,-', discount: '1%', status: 'Tersedia' },
     { name: '5000 UC', price: 'Rp 600.000,-', discount: '1%', status: 'Habis' },
   ];
 
   const handleSelectItem = (item) => {
+    if (item.status === 'Habis') {
+      // Do nothing if the item is out of stock
+      return;
+    }
+
     // Toggle item selection; if the selected item is clicked again, deselect it
     if (selectedItem && selectedItem.name === item.name) {
       setSelectedItem(null);
@@ -28,8 +33,8 @@ export default function Card_P() {
 
   return (
     <>
-    <Hero_P />
-    <VoucherInput />
+      <Hero_P />
+      <VoucherInput />
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         rel="stylesheet"
@@ -41,7 +46,9 @@ export default function Card_P() {
           {dummyData.map((item) => (
             <div
               key={item.name}
-              className={`relative bg-cyan-950 p-4 rounded-lg cursor-pointer transition hover:scale-105 duration-300 ease-in-out ${
+              className={`relative bg-cyan-950 p-4 rounded-lg ${
+                item.status === 'Habis' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:scale-105'
+              } transition duration-300 ease-in-out ${
                 selectedItem && selectedItem.name === item.name ? 'border-4 border-sky-500' : ''
               }`}
               onClick={() => handleSelectItem(item)}
@@ -76,7 +83,7 @@ export default function Card_P() {
       </div>
 
       {/* Pass selectedItem to Footer */}
-      <Footer_P selectedItem={selectedItem} />
+      <Payment_P selectedItem={selectedItem} />
     </>
   );
 }
